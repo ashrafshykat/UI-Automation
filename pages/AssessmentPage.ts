@@ -8,14 +8,14 @@ export class AssessmentPage extends BasePage {
     }
 
     async fillHouseDetails() {
-        await this.page.getByLabel(/Semi-datached|Semi-detached/i).check(); 
-        await this.page.getByLabel('2', { exact: true }).check();
-        await this.page.getByLabel('Yes', { exact: true }).first().check(); 
-        await this.page.getByLabel('No', { exact: true }).last().check();  
+        await this.page.getByLabel(/Semi-datached|Semi-detached/i).check({ force: true }); 
+        await this.page.getByLabel('2', { exact: true }).check({ force: true });
+        await this.page.getByLabel('Yes', { exact: true }).first().check({ force: true }); 
+        await this.page.getByLabel('No', { exact: true }).last().check({ force: true });  
     }
 
     async handlePhotoUpload(fileName: string) {
-        const noPhotoCheckbox = this.page.getByLabel(/I don‘t have a photo to hand/i);
+        const noPhotoCheckbox = this.page.getByLabel(/I don't have a photo to hand/i);
         if (await noPhotoCheckbox.isChecked()) {
             await noPhotoCheckbox.uncheck();
         }
