@@ -1,0 +1,23 @@
+Go to http://52.49.147.125:3005/
+Click the following:
+Our Services
+then, Home Energy Assesment
+then, Book your Home Energy Assessment
+Select following:
+House Type = Semi-datached
+No. of Storeys = 2
+Existing extension = Yes
+Plans to add extensions = No
+Uncheck "I don‘t have a photo to hand"
+Upload a photo and click Next
+Assert Your first step to a warm, comfortable, and healthy home text is visible
+Close pop ups if any appear
+Click Next
+Fill fields (First name, Last name, Email, Mobile)
+Type Dublin in Property Address searchbar & select any option
+Click Next
+Create a condition to check, if any date is available in current month
+Else, go to the next month and select any available date
+After selecting the date, select any available time slot (morning/ afternoon)
+Click Later
+Assert your previously provided email address on the pop up
