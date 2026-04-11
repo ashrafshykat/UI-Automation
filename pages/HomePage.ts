@@ -11,8 +11,16 @@ export class HomePage extends BasePage {
     }
 
     async goToEnergyAssessment() {
-        await this.page.getByText('Our Services').first().click();
-        await this.page.locator('a').filter({ hasText: /^Home Energy Assessment$/ }).click({ force: true });
+        // 1. Hover over the menu instead of clicking
+        await this.page.getByText('Our Services').first().hover();
+        
+        // 2. Wait half a second for the CSS dropdown animation to finish
+        await this.page.waitForTimeout(500);
+        
+        // 3. Target the exact link path that Playwright found in the error logs
+        await this.page.locator('a[href="/one-stop-shop-service/home-energy-assessment"]').first().click({ force: true });
+        
+        // 4. Click the final booking button
         await this.page.getByRole('button', { name: /Book your Home Energy Assessment/i }).click();
     }
 }
