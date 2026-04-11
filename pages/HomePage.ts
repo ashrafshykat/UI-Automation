@@ -12,7 +12,7 @@ export class HomePage extends BasePage {
 
     async goToEnergyAssessment() {
         await this.page.getByText('Our Services').first().click();
-        await this.page.locator('a').filter({ hasText: /^Home Energy Assessment$/ }).click();
+        await this.page.locator('a').filter({ hasText: /^Home Energy Assessment$/ }).click({ force: true });
         await this.page.getByRole('button', { name: /Book your Home Energy Assessment/i }).click();
     }
 }
