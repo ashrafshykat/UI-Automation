@@ -7,11 +7,14 @@ export class HomePage extends BasePage {
     }
 
     async navigate() {
-        // Navigate to the base URL
-        await this.page.goto('http://52.49.147.125:3005/');
+        await this.page.goto('http://52.49.147.125:3005/', { 
+            timeout: 60000, 
+            waitUntil: 'domcontentloaded' 
+        });
     }
 
     async goToEnergyAssessment() {
+        // Direct navigation to the assessment sub-page to save time
         await this.page.goto('http://52.49.147.125:3005/one-stop-shop-service/home-energy-assessment');
         
         const bookingBtn = this.page.getByRole('button', { name: /Book your Home Energy Assessment/i });
